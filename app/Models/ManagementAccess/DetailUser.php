@@ -29,4 +29,16 @@ class DetailUser extends Model
         'updated_at',
         'deleted_at',
   ];
+
+  //function hasMany atau hasOne
+  public function type_user()
+  {
+      //3 parameter('path', 'field fk', 'field pk from tabel hasMany/hasOne')
+      return $this->belongsTo('App\Models\MasterData\TypeUser.php', 'type_user_id', 'id');
+  }
+
+  public function user()
+  {
+      return $this->belongsTo('App\Models\User', 'user_id', 'id');
+  }
 }
