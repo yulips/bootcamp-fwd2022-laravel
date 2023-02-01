@@ -26,4 +26,14 @@ class PermissionsRole extends Model
         'updated_at',
         'deleted_at',
   ];
+
+  public function permissions()
+  {
+      return $this->belonsTo('App\Models\ManagementAccess\Permissions', 'permissions_id', 'id');
+  }
+
+  public function role()
+  {
+      return $this->belonsTo('App\Models\ManagementAccess\Role', 'role_id', 'id');
+  }
 }

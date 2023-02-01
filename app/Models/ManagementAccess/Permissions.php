@@ -25,4 +25,9 @@ class Permissions extends Model
         'updated_at',
         'deleted_at',
   ];
+
+  public function permissions_role()
+  {
+      return $this->hasMany('App\Models\ManagementAccess\PermissionsRole', 'permissions_id');
+  }
 }
