@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\frontsite;
 
-// use library here
 use App\Http\Controllers\Controller;
+
+// use library here
 use Symfony\Component\HttpFoundation\Response; //wajib 
 use Illuminate\Suppport\Facades\Storage;
 use Illuminate\Http\Request;
@@ -30,6 +31,11 @@ class PaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function _construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('pages.frontsite.payment.index');
